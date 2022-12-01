@@ -8,7 +8,9 @@ public class Livre {
 	private int NbrPages;
 	private int NbrExemplaire;
 	
-	public Livre(String Titre,String Auteur,String Genre,int NbrPages,int NbrExemplaire) {
+	
+	//constructeur
+	public Livre(final String Titre,final String Auteur,final String Genre,final int NbrPages,final int NbrExemplaire) {
 		this.Titre = Titre;
 		this.Auteur = Auteur;
 		this.Genre = Genre;
@@ -16,20 +18,6 @@ public class Livre {
 		this.NbrExemplaire = NbrExemplaire;
 		
 	}
-	
-	
-	//information du livre
-	public String info() {
-		return "le titre du livre est "+this.Titre+" ,il est écrit par "+this.Auteur+" ,c'est un livre de "+this.Genre+" ,il a "+this.NbrPages+" pages et est disponnible en "+this.NbrExemplaire+" exemplaire";
-	}
-	
-	
-	
-	
-	
-
-	
-	
 	
 	//getter et setter
 	public String getTitre() {
