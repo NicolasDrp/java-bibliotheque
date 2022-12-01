@@ -22,7 +22,7 @@ public class Main {
 			}
 			else if (saisiUtilisateur.equals("2")) {
 				//rechercher un livre
-				System.out.println("veuillez entrer le titre , l'auteur , le genre , le nombre de pages ");
+				System.out.println("Quel livre cherchez vous ?");
 				String valeur = scan.nextLine();
 				bibliotheque.recherche(valeur);
 				
@@ -31,14 +31,26 @@ public class Main {
 				//si l'utilisateur veut creer un nouveau livre    saisi = 3
 				System.out.println("Quel est le titre du livre");
 				String titre = scan.nextLine();
+				while (titre.length()<2) {
+					System.out.println("Entrée invalide"+"\n"+"Quel est le titre du livre");
+					titre = scan.nextLine();
+				}
 				System.out.println("Qui est l'auteur du livre");
 				String nom = scan.nextLine();
+				while (nom.length()<2) {
+					System.out.println("Entrée invalide"+"\n"+"Qui est l'auteur du livre");
+					nom = scan.nextLine();
+				}
 				System.out.println("Quel est le genre du livre");
 				String genre = scan.nextLine();
+				while (genre.length()<2) {
+					System.out.println("Entrée invalide"+"\n"+"Qui est l'auteur du livre");
+					genre = scan.nextLine();
+				}
 				System.out.println("Combien d'exemplaire de ce livre avons nous");
 				//etre sur que ce soit un nombre qui soit entré
 			    boolean bool = false;
-			    int Nbrexemplaire = -1;
+			    int Nbrexemplaire = 1;
 			    while(!bool)
 			    {
 			        try
@@ -82,6 +94,7 @@ public class Main {
 			}
 			else if (saisiUtilisateur.equals("4")) {
 				//modifier un livre existant
+				System.out.println("Quel livre voulez vous modifier ?");
 				
 			}
 			else {
