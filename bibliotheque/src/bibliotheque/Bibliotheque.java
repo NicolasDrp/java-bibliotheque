@@ -74,35 +74,38 @@ public class Bibliotheque {
 	public void recherche(String valeur) {
 		lire();
 		ArrayList<String> cherche = new ArrayList<>();
-        for (String i : listeStr) {
-            if (i.contains(valeur)) {
-                cherche.add(i);      
-            }
-            //else {
-			//	System.out.println("Nous n'avons pas ce livre");
-			//	System.exit(0);
-			//}
-       }
-        //convertir la liste en chaine de caractere
-        String str = "";
-		for (String chercheStr : cherche) {
-			str+= chercheStr+",";
+        
+		try {
+			for (String i : listeStr) {
+	            if (i.contains(valeur)) {
+	                cherche.add(i);      
+	            }
+	           
+	       }
+	        //convertir la liste en chaine de caractere
+	        String str = "";
+			for (String chercheStr : cherche) {
+				str+= chercheStr+",";
+			}
+			//split puis afficher les valeurs
+			str.split(";");
+			String[] info = str.split(";");
+			System.out.println("le titre du livre est "+info[0]+" ,il est écrit par "+info[1]+" ,c'est un livre du genre : "+info[2]+" ,il a "+info[3]+" pages .Le nombre d'exemplaire disponnible est de  "+info[4]);
+			System.out.println("Titre : "+info[0]+"\n"
+								+"Auteur : "+info[1]+"\n"
+								+"Genre : "+info[2]+"\n"
+								+"Nombre de pages : "+info[3]+"\n"
+								+"Exemplaire disponible : "+info[4]+"\n");
+		} catch (ArrayIndexOutOfBoundsException e) {
+					System.out.println("Nous n'avons pas ce livre");
+					System.exit(0);
 		}
-		//split puis afficher les valeurs
-		str.split(";");
-		String[] info = str.split(";");
-		System.out.println("le titre du livre est "+info[0]+" ,il est écrit par "+info[1]+" ,c'est un livre du genre : "+info[2]+" ,il a "+info[3]+" pages .Le nombre d'exemplaire disponnible est de  "+info[4]);
-		System.out.println("Titre : "+info[0]+"\n"
-							+"Auteur : "+info[1]+"\n"
-							+"Genre : "+info[2]+"\n"
-							+"Nombre de pages : "+info[3]+"\n"
-							+"Exemplaire disponible : "+info[4]+"\n");
 	}
 	
 	//modifier un livre
 		public void modifier() {
 			
-			//trouver la livre
+			//trouver le livre
 			//supprimer le livre
 			//demander à l'utilisateur de le recréer
 		}
